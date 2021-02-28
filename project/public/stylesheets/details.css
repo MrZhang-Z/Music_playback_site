@@ -1,0 +1,293 @@
+html{
+    background: url(../images/background_img.jpg);
+    background-position: center 0;
+    background-size: contain;
+    background-size: cover;  
+    /* background-repeat: no-repeat; */
+    background-attachment:fixed;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+
+.app{
+    width: 100%;
+    /* height: 100%; */
+}
+
+/* 头部样式 */
+.header{
+    width: 100%;
+    height: 80px;
+    top: 0;
+    position: fixed;
+}
+.herder_content{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(221, 197, 199);
+    max-width: 80%;
+    min-width: 1150px;
+}
+/* 网站标志图片 */
+.website_img{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.website_icon{
+    width: 80px;
+    height: 80px;
+}
+/* 搜索 */
+.search{
+    width: 350px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.search>h2{
+    line-height: 80px;
+    color: rgb(236, 58, 78);
+}
+/* 搜索框 */
+.search_input{
+    width: 80%;
+    height: 40%;
+    border: none;
+    border-radius: 16px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    outline: none;
+    padding-left: 15px;
+}
+/* 放大镜 */
+.search_go{
+    width: 32px;
+    height: 32px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* 登陆、注册 */
+.login{
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 登陆按钮 */
+.btn_login{
+    width: 80px;
+    height: 40px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 20px;
+    color: rgb(236, 58, 78);
+    outline: none;
+    cursor: pointer;
+}
+
+/* 主体样式 */
+.body{
+    max-width: 80%;
+    /* height: 855px; */
+    background-color: rgba(221, 203, 205, 0.5);
+    margin: 0 auto;
+    margin-top: 80px;
+    min-width: 1000px;
+    min-height: 855px;
+}
+.body_content{
+    margin: 0 auto;
+    max-width: 60%;
+    min-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 100%;
+}
+/* 音乐信息 */
+.music{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    flex: row;
+    margin: 10px 0 10px 0;
+}
+.music_img{
+    width: 20%;
+    height: 100%;
+}
+.img{
+    width: 120px;
+    height: 120px;
+    margin: 15px 0 0 20%;
+}
+.music_info{
+    width: 40%;
+    height: 100%;
+}
+.music_info_content{
+    width: 100%px;
+    height: 50px;
+    display: block;
+    line-height: 50px;
+    font-size: 18px;
+}
+.music_name{
+    font-size: 32px;
+    line-height: 50px;
+}
+.music_introduction{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+}
+.music_introduction_title{
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    line-height: 50px;
+}
+.music_introduction_content{
+    width: 95%;
+    height: 120px;
+    display: block;
+    padding: 5px 10px 15px 10px;
+    overflow: hidden;
+    line-height: 26px;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* 歌词 */
+.music_lyrics{
+    width: 100%;
+    height: 300px;
+    margin: 10px 0 10px 0;
+    /* overflow: scroll; */
+}
+.lyrics_content{
+    width: 60%;
+    height: 295px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    font-size: 16px;
+    color: #000000;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    /* font-weight: bold; */
+    font-family: sans-serif;
+    /* Verdana,Genva,Arial, */
+}
+.lyrics_content::-webkit-scrollbar,.music_lyrics::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
+
+/* 发布评论 */
+.post_comment{
+    width: 100%;
+    height: 150px;
+    /* background-color: lightgreen; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.comment_input{
+    width: 80%;
+    height: 90%;
+    margin: 5px 0 0 0; 
+    border: none;
+    border-radius: 16px;
+    /* margin-top: 24px; */
+    border: 1px solid rgb(246, 188, 177);
+    outline: none;
+    padding-left: 15px;
+    line-height: 20px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000000;
+}
+.comment_input::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
+.comment_send{
+    width: 80px;
+    height: 40px;
+    margin: 103px 0 0 0;
+}
+
+/* 评论 */
+.music_comment{
+    width: 100%;
+    /* height: 810px; */
+    /* background-color: blue; */
+    margin: 0 0 0px 0;
+}
+.comment__list_item {
+    padding: 15px 10px 15px 56px;
+    zoom: 1;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: white;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+}
+.comment_div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 0 0 5px
+}
+
+.comment_content{
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 30px;
+    text-align: justify;
+    display: inline-block;
+    /* height: none; */
+}
+
+.comment_title{
+    font-weight: 400;
+    /* margin-bottom: 16px; */
+    overflow: hidden;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 22px
+}
+
+.comment_avatar{
+    width: 50px;
+    height: 50px;
+}
+
+.comment_time{
+    font-size: 14px;
+}

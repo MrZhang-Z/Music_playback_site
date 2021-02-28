@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情</title>
+    <link rel="stylesheet" href="../public/stylesheets/details.css">
+</head>
+
+<body>
+    <div class="app">
+        <div id="header" class="header">
+            <div class="herder_content">
+                <div class="website_img">
+                    <img src="../public/images/ico.png" alt="音乐" class="website_icon">
+                </div>
+                <div class="search">
+                    <!-- <input type="text" class="search_input">
+                    <div class="search_go">
+                        <img src="../public/images/search_img.png" alt="搜索">
+                    </div> -->
+                    <h2>音乐详情</h2>
+                </div>
+                <div class="login">
+                    <a href="/login"><button class="btn_login">登陆</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <form action="/details" method="POST">
+                <div class="body_content">
+                    <div class="music">
+                        <div class="music_img">
+                            <img src={{music_data[0].music_img}} alt="音乐图片" class="img">
+                        </div>
+                        <div class="music_info">
+                            <input type="text" name="music_name" value={{music_data[0].music_name}}
+                                style="display: none;" readonly>
+                            <span class="music_name music_info_content">{{music_data[0].music_name}}</span>
+                            <span class="music_singer music_info_content">{{music_data[0].music_singer}}</span>
+                            <span class="music_album music_info_content">{{music_data[0].music_album}}</span>
+                        </div>
+                    </div>
+                    <div class="music_lyrics">
+                        <textarea name="" id="" cols="30" rows="10" class="lyrics_content"
+                            readonly>{{music_data[0].music_lyrics}}</textarea>
+                    </div>
+                    <div class="post_comment">
+                        <h4 name="user_name">{{user_name}}</h4>
+                        <input type="text" readonly value={{user_name}} name="user_name" style="display:none">
+                        <textarea name="comment_input" id="" cols="50" rows="10" class="comment_input"></textarea>
+                        <input type="submit" value="发布" class="comment_send btn_login">
+                    </div>
+                    <div class="music_comment">
+                        <h4 style="margin: 0 0 0 13px;">精彩评论</h4>
+                        <ul class="comment_list">
+                            {{each music_data}}
+                            <li class="comment__list_item">
+                                <img src="{{$value.commentator_avatar}}" alt="" class="comment_avatar">
+                                <div class="comment_div">
+                                    <h4 class="comment_title">{{$value.music_commentator}}</h4>
+                                    <span class="comment_content">{{$value.comment_content}}</span>
+                                    <span class="comment_time">{{$value.comment_time}}</span>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+    
+</html>

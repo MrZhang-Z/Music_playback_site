@@ -1,0 +1,202 @@
+html{
+    background: url(../images/background_img.jpg);
+    background-position: center 0;
+    /* background-size: contain; */
+    background-size: cover; 
+}
+*{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+    list-style-type: none;
+    height: 98%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 头部样式 */
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    min-width: 1150px;
+}
+.user_data{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    background-color: rgb(221, 197, 199);
+    min-width: 1150px;
+}
+.identity{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    color:  rgb(236, 58, 78);
+    font-size: 24px;
+    margin: 0 0 0 20px;
+}
+/* 网站标志图片 */
+.website_img{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 10px 0 0 30px;
+}
+.website_icon{
+    width: 64px;
+    height: 64px;
+}
+.tit{
+    width: 500px;
+    height: 100%;
+    /* background-color: black; */
+    color:  rgb(236, 58, 78);
+    margin-left: 50px;
+    font-size: 34px;
+    line-height: 100px;
+}
+
+/* 体部样式 */
+.body{
+    width: 100%;
+    height: 700px;
+    /* background-color: green; */
+}
+.body_content{
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    max-width: 80%;
+    min-width: 1150px;
+    max-height: 100%;
+    min-height: 600px;
+}
+
+/* 音乐 */
+.music{
+    max-width: 1200px;
+    background-color: rgba(221, 203, 205, 0.5);
+    overflow:auto;
+    margin: 0 auto;
+    min-width: 800px;
+    max-height: 100%;
+    min-height: 600px;
+}
+/* 音乐列表 */
+.music_list{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* background-color: white; */
+    margin: 5px 0 10px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 音乐信息 */
+.music_info{
+    width: 25%;
+    height: 100%;
+    /* background-color: red; */
+    font-size: 18px;
+    line-height: 40px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    color: rgb(234, 164, 199);
+    overflow: hidden;
+}
+/* 播放、收藏 */
+.operating{
+    width:15%;
+    height: 40px;
+    cursor: pointer;
+}
+.btn{
+    width: 60px;
+    height: 30px;
+    /* margin-top: 24px; */
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 15px;
+    color: rgb(236, 58, 78);
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* 尾部样式 */
+.footer{
+    width: 80%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.7);
+    bottom: 0;
+    margin: 0 auto;
+    min-width: 1150px;
+}
+.add{
+    width: 30%;
+    height: 50px;
+    /* background-color: black; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.add_btn{
+    margin-top: 20px;
+    width: 80px;
+    height: 35px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 25px;
+    color: rgb(236, 58, 78);
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.search{
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 16px;
+    /* position: relative;
+    top: 24px; */
+    margin: 24px 0 0 -10px;
+    border: 1px solid rgb(246, 188, 177);
+    outline: none;
+    padding-left: 15px;
+}
+.search_btn{
+    margin-top: 20px;
+    width: 80px;
+    height: 35px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 25px;
+    color: rgb(236, 58, 78);
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}

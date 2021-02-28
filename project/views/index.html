@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放系统</title>
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/index.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="header" class="header">
+            <div class="herder_content">
+                <div class="website_img">
+                    <img src="../public/images/ico.png" alt="音乐" class="website_ico">
+                </div>
+                <div class="search">
+                    <h2 class="title">音乐播放管理系统</h2>
+                </div>
+                <div class="login">
+                    <a href="/login"><button class="btn_login">{{login}}</button></a>
+                </div>
+            </div>
+        </div>
+        <div id="body" class="body">
+            <div class="body_content">
+                <div class="user_info">
+                    <div class="info">
+                        <img src={{user_avatar}} alt="头像" class="user_avatar">
+                        <p class="user_name" id="user_name">{{user_name}}</p>
+                        <p class="user_motto">{{one_sentence}}</p>
+                    </div>
+                </div>
+                <div class="music">
+                    <ul id="content">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class="footer_content">
+                <div class="music_play">
+                    <audio id="audio" src="" autoplay="autoplay"></audio>
+                    <div class="music_img">
+                        <img src="../public/images/3.jpg" alt="音乐封面" id="music_img" onclick="details()">
+                    </div>
+                    <div class="music_name_singer">
+                        <span id="music_name"></span>
+                        <span id="music_singer"></span>
+                    </div>
+                    <div class="music_controller">
+                        <div class="btns_controller">
+                            <div class="previous_song btn_con">
+                                <img src="../public/images/previous.png" alt="上一首" title="上一首" onclick="previous()">
+                            </div>
+                            <div class="play_pause btn_con">
+                                <img src="../public/images/music_play.png" alt="播放/暂停" title="播放/暂停" onclick="pause()"
+                                    id="paly_pause">
+                            </div>
+                            <div class="next_song btn_con">
+                                <img src="../public/images/next.png" alt="下一首" title="下一首" onclick="next()">
+                            </div>
+                        </div>
+                        <!-- <div class="time"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var music_data;
+    var audio = document.getElementById('audio');
+    var index;
+    var playing = false;
+    var play_pause = document.getElementById('paly_pause');
+    var music_img = document.getElementById('music_img');
+    var music_name = document.getElementById('music_name');
+    var music_singer = document.getElementById('music_singer');
+
+    // 获取音乐并渲染
+    function getMusic() {
+        $.ajax({
+            type: "GET",
+            url: "http://192.168.244.1:3000/musicList",
+            dataType: "json",
+            success: function (data) {
+                var str = '';
+                music_data = data;
+                var music = document.getElementById('content');
+                for (let i = 0; i < music_data.length; i++) {
+                    str += `
+                    <li class="music_list" v-for="(item, index) in music_list">
+                        <div class="music_name music_info">
+                            <img src="../public/images/music.png" alt="音乐" class="music_info_icon">
+                            <span>` + music_data[i].music_name + `</span>
+                        </div>
+                        <div class="music_singer music_info">
+                            <img src="../public/images/singer.png" alt="歌手" class="music_info_icon">
+                            <span>` + music_data[i].music_singer + `</span>
+                        </div>
+                        <div class="album music_info">
+                            <img src="../public/images/album.png" alt="专辑" class="music_info_icon">
+                            <span>` + music_data[i].music_album + `</span>
+                        </div>
+                        <div class="to_play">
+                            <img src="../public/images/play.png" alt="播放" class="music_info_icon" onclick="play(`+ i + `)">
+                        </div>
+                    </li>`;
+                }
+                music.innerHTML = str;
+            }
+        });
+    };
+
+    // 播放音乐
+    function play(i) {
+        audio.src = music_data[i].music_src;
+        index = i;
+        playing = true;
+        play_pause.src = '../public/images/music_pause.png';
+        music_img.src = music_data[i].music_img;
+        music_name.innerHTML = music_data[i].music_name;
+        music_singer.innerHTML = music_data[i].music_singer;
+    };
+
+    // 上一首
+    function previous() {
+        var music_length = music_data.length;
+        index = index - 1;
+        if (index < 0) {
+            index = music_length - 1;
+        }
+        audio.src = music_data[index].music_src;
+        music_img.src = music_data[index].music_img;
+        music_name.innerHTML = music_data[index].music_name;
+        music_singer.innerHTML = music_data[index].music_singer;
+        if (playing === false) {
+            play_pause.src = '../public/images/music_pause.png';
+            playing = true;
+        }
+    };
+
+    // 下一首
+    function next() {
+        var music_length = music_data.length;
+        index = index + 1;
+        if (index > music_length - 1) {
+            index = 0;
+        }
+        audio.src = music_data[index].music_src;
+        music_img.src = music_data[index].music_img;
+        music_name.innerHTML = music_data[index].music_name;
+        music_singer.innerHTML = music_data[index].music_singer;
+        if (playing === false) {
+            play_pause.src = '../public/images/music_pause.png';
+            playing = true;
+        }
+    };
+
+    // 暂停
+    function pause() {
+        if (playing === true) {
+            audio.pause();
+            play_pause.src = '../public/images/music_play.png';
+            playing = false;
+        } else if (playing === false) {
+            audio.play();
+            play_pause.src = '../public/images/music_pause.png';
+            playing = true;
+        }
+    };
+
+    // 详情
+    function details() {
+        var user_name = document.getElementById('user_name').innerHTML;
+        window.open('/details?music=' + music_data[index].music_name + '&user_name=' + user_name);//新窗口
+    }
+
+    window.onload = function () {
+        getMusic();
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑</title>
+    <link rel="stylesheet" href="../public/stylesheets/edit.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="user_data">
+            <div class="website_img">
+                <a href="/"><img src="../public/images/ico.png" alt="音乐" class="website_ico"></a>
+            </div>
+            <p class="identity">编辑音乐</p>
+        </div>
+    </div>
+    <div id="body" class="body">
+        <div class="body_content">
+            <form action="/edit" method="POST">
+                <div class="music">
+                    <div class="music_id music_list">
+                        <span class="add_info">音乐ID</span>
+                        <input class="add_info_input" type="text" name="music_id" value="{{ music_info.id }}" readonly>
+                    </div>
+                    <div class="music_name music_list">
+                        <span class="add_info">音乐名</span>
+                        <input class="add_info_input" type="text" name="music_name" value="{{ music_info.music_name }}">
+                    </div>
+                    <div class="music_singer music_list">
+                        <span class="add_info">歌手</span>
+                        <input class="add_info_input" type="text" name="music_singer"
+                            value="{{ music_info.music_singer }}">
+                    </div>
+                    <div class="music_album music_list">
+                        <span class="add_info">专辑</span>
+                        <input class="add_info_input" type="text" name="music_album"
+                            value="{{ music_info.music_album }}">
+                    </div>
+                    <div class="music_src music_list">
+                        <span class="add_info">音乐链接</span>
+                        <input class="add_info_input" type="text" name="music_src" value="{{ music_info.music_src }}">
+                    </div>
+                    <div class="muisc_img music_list">
+                        <span class="add_info">封面图片</span>
+                        <input class="add_info_input" type="text" name="music_img" value="{{ music_info.music_img }}">
+                    </div>
+                    <div class="edit">
+                        <input type="submit" value="提交" class="btn" onclick="edit_btn()">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var edit_btn = () => {
+        alert('已修改！');
+    }
+</script>
+
+</html>

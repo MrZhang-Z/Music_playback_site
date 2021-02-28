@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增</title>
+    <link rel="stylesheet" href="../public/stylesheets/add.css">
+</head>
+
+<body>
+    <form method="POST" action="/add">
+        <div class="header">
+            <div class="data">
+                <div class="website_img">
+                    <a href="/"><img src="../public/images/ico.png" alt="音乐" class="website_ico"></a>
+                </div>
+                <p class="identity">新增音乐</p>
+            </div>
+        </div>
+        <div id="body" class="body">
+            <div class="body_content">
+                <div class="music">
+                    <div class="music_name music_list">
+                        <span class="add_info">音乐名</span>
+                        <input class="add_info_input" type="text" name="music_name">
+                    </div>
+                    <div class="music_singer music_list">
+                        <span class="add_info">歌手</span>
+                        <input class="add_info_input" type="text" name="music_singer">
+                    </div>
+                    <div class="music_album music_list">
+                        <span class="add_info">专辑</span>
+                        <input class="add_info_input" type="text" name="music_album">
+                    </div>
+                    <div class="music_src music_list">
+                        <span class="add_info">音乐链接</span>
+                        <input class="add_info_input" type="text" name="music_src">
+                    </div>
+                    <div class="muisc_img music_list">
+                        <span class="add_info">封面图片</span>
+                        <input class="add_info_input" type="text" name="music_img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="add">
+                <input type="submit" class="add_btn" value="新增">
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <script src="../public/javascripts/vue.js"></script>
+    <link rel="stylesheet" href="../public/stylesheets/register.css">
+</head>
+<body>
+    <div id="app">
+        <form class="form" action="/register" method="POST">
+            <div class="login">
+                <div class="title">
+                    <span class="title_content">注册</span>
+                </div>
+                <div class="user_email display_flex">
+                    <span class="login_info">邮箱</span>
+                    <input type="email" class="login_info_input" name="user_email">
+                </div>
+                <div class="user_name display_flex">
+                    <span class="login_info">用户名</span>
+                    <input type="text" class="login_info_input" name="user_name">
+                </div>
+                <div class="user_password display_flex">
+                    <span class="login_info">密码</span>
+                    <input type="password" class="login_info_input" name="user_password">
+                </div>
+                <div class="user_relpassword display_flex">
+                    <span class="login_info">确认密码</span>
+                    <input type="password" class="login_info_input" name="confirm_password">
+                </div>
+                <div class="user_avatar display_flex">
+                    <span class="login_info">头像</span>
+                    <input type="text" class="login_info_input" name="user_avatar">
+                </div>
+                <div class="user_motto display_flex">
+                    <span class="login_info">座右铭</span>
+                    <input type="text" class="login_info_input" name="user_motto">
+                </div>
+                <div class="btn_login display_flex">
+                    <button type="submit" class="btn_go">注册</button>
+                </div>
+                <div class="change">
+                    <a href="/login"><p class="change_to">已有账号？点击登录。</p></a>
+                    <p class="massage">{{ msg }}</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登陆</title>
+    <script src="../public/javascripts/vue.js"></script>
+    <link rel="stylesheet" href="../public/stylesheets/login.css">
+</head>
+<body>
+    <div id="app">
+        <form class="form" method="POST" action="/login">
+            <div class="login">
+                <div class="title">
+                    <span class="title_content">登录</span>
+                </div>
+                <div class="user_email display_flex">
+                    <span class="login_info">邮箱</span>
+                    <input type="email" class="login_info_input" name="email">
+                </div>
+                <div class="user_password display_flex">
+                    <span class="login_info">密码</span>
+                    <input type="password" class="login_info_input" name="password">
+                </div>
+                <div class="user_identity">
+                    <input type="radio" name="identity" value="1" class="identity_type" checked>
+                    <span class="login_info">用户</span>
+                    <input type="radio" name="identity" value="0" class="identity_type">
+                    <span class="login_info">管理员</span>
+                </div>
+                <div class="btn_login display_flex">
+                    <button type="submit" class="btn_go">登陆</button>
+                </div>
+                <div class="change">
+                    <a href="/register"><p class="change_to">还没有账号？点击注册。</p></a>
+                    <p class="massage">{{ msg }}</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+   
+</script>
+</html>

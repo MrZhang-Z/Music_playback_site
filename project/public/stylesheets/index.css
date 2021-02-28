@@ -1,0 +1,316 @@
+html{
+    background: url(../images/background_img.jpg);
+    background-position: center 0;
+    background-size: contain;
+    background-size: cover; 
+}
+*{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul,li{
+    list-style: none;
+    list-style-type: none;
+    height: 98%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 头部样式 */
+.header{
+    width: 100%;
+    height: 80px;
+    top: 0;
+}
+.herder_content{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(221, 197, 199);
+    max-width: 80%;
+    min-width: 1150px;
+}
+/* 网站标志图片 */
+.website_img{
+    width: 80px;
+    height: 100%;
+    /* background-color: lightyellow; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.website_icon{
+    width: 64px;
+    height: 64px;
+}
+/* 搜索 */
+.search{
+    width: 350px;
+    height: 80px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 搜索框 */
+.search_input{
+    width: 80%;
+    height: 40%;
+    border: none;
+    border-radius: 16px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    outline: none;
+    padding-left: 15px;
+}
+/* 放大镜 */
+.search_go{
+    width: 32px;
+    height: 32px;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.title{
+    width: 240px;
+    height: 100%;
+    line-height: 80px;
+    color: rgb(236, 58, 78);
+}
+
+/* 登陆、注册 */
+.login{
+    width: 150px;
+    height: 80px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 登陆按钮 */
+.btn_login{
+    width: 60%;
+    height: 40%;
+    margin-top: 24px;
+    border: 1px solid rgb(246, 188, 177);
+    border-radius: 16px;
+    color: rgb(236, 58, 78);
+    outline: none;
+    cursor: pointer;
+}
+
+/* 主体样式 */
+.body{
+    width: 100%;
+    height: 83%;
+}
+.body_content{
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    max-width: 80%;
+    min-width: 1150px;
+    max-height: 100%;
+    min-height: 600px;
+}/* 用户信息 */
+.user_info{
+    min-width: 250px;
+    max-width: 250px;
+    height: 100%;
+    max-height: 100%;
+    min-height: 600px;
+    background-color: rgb(221, 197, 199);
+}
+/* 用户信息 */
+.info{
+    width: 100%;
+    height: 350px;
+    position: relative;
+    /* background-color: rgb(221, 203, 205); */
+}
+/* 头像 */
+.user_avatar{
+    width: 100px;
+    height: 100px;
+    /* border: 1px solid blue; */
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 10px;
+}
+/* 昵称 */
+.user_name{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(212, 190, 190);
+    text-align: center;
+    position: absolute;
+    top: 120px;
+}
+/* 座右铭 */
+.user_motto{
+    width: 200px;
+    height: 120px;
+    background-color: rgb(212, 190, 190);
+    text-align: center;
+    position: absolute;
+    top: 170px;
+    font-size: 18px;
+    left: 50%;
+    margin-left: -100px;
+    line-height: 30px;
+    padding: 15px 0 15px 0;
+    overflow: auto;
+    border-radius: 10px;
+}
+/* 滚动条 */
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+/* 音乐 */
+.music{
+    max-width: 1200px;
+    background-color: rgba(221, 203, 205, 0.5);
+    overflow:auto;
+    margin: 0 auto;
+    min-width: 800px;
+    max-height: 100%;
+    min-height: 600px;
+}
+/* 音乐列表 */
+.music_list{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* background-color: white; */
+    margin: 5px 0 10px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 音乐信息 */
+.music_info{
+    width: 25%;
+    height: 100%;
+    /* background-color: red; */
+    font-size: 18px;
+    line-height: 40px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    color: white;
+    overflow: hidden;
+}
+/* 播放、收藏 */
+.to_play{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+/* 音乐信息图标 */
+.music_info_icon{
+    width: 32px;
+    height: 32px;
+    margin: 5px 0 0 0;
+}
+
+
+
+/* 尾部样式 */
+.footer{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+}
+.footer_content{
+    max-width: 80%;
+    min-width: 1150px;
+    height: 100%;
+    background-color: rgb(221, 197, 199);
+    margin: 0 auto;
+}
+/* 音乐播放 */
+.music_play{
+    width: 70%;
+    height:100%;
+    /* background-color: orange; */
+    margin: 0 auto;
+    /* display: flex;
+    justify-content: left;
+    flex: row; */
+}
+/* 音乐图片 */
+.music_img{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    margin: auto;
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+}
+.music_name_singer{
+    width: 195px;
+    height: 60px;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 10px 0 0 10px;
+    float: left;
+}
+.music_name_singer>span:nth-child(1){
+    font-size: 24px;
+    color: rgb(236, 58, 78);
+}
+.music_name_singer>span:nth-child(2){
+    font-size: 14px;
+    color: rgb(236, 58, 78);
+}
+/* 控制器 */
+.music_controller{
+    width: 45%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    float: left;
+}
+/* 控制按钮 */
+.btns_controller{
+    width: 150px;
+    height: 100%;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 上一首 */
+.btn_con{
+    width: 40px;
+    height: 40px;
+    /* background-color: red; */
+    margin: 20px 0 0 0;
+    cursor: pointer;
+}
+/* 时间 */
+.time{
+    width: 80%;
+    height: 4px;
+    background-color: rgb(227, 93, 111);
+    margin: 38px 0 0 0;
+} 

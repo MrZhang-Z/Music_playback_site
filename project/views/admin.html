@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐管理</title>
+    <script src="../public/javascripts/vue.js"></script>
+    <link rel="stylesheet" href="../public/stylesheets/admin.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="user_data">
+            <div class="website_img">
+                <a href="/"><img src="../public/images/ico.png" alt="音乐" class="website_ico"></a>
+            </div>
+            <p class="identity">管理员</p>
+            <div class="tit">音乐播放系统后台管理</div>
+        </div>
+    </div>
+    <div id="body" class="body">
+        <div class="body_content">
+            <div class="music">
+                <ul>
+                    {{ each music_data }}
+                    <li class="music_list">
+                        <div class="music_name music_info">
+                            <span>{{ $value.music_name }}</span>
+                        </div>
+                        <div class="music_singer music_info">
+                            <span>{{ $value.music_singer }}</span>
+                        </div>
+                        <div class="album music_info">
+                            <span>{{ $value.music_album }}</span>
+                        </div>
+                        <div class="operating">
+                            <a href="/edit?id={{$value.id}}"><button class="btn">编辑</button></a>
+                            <a href="/delete?id={{$value.id}}" onclick="del_btn()"><button class="btn">删除</button></a>
+                        </div>
+                    </li>
+                    {{ /each }}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="add">
+            <a href="/add"><button class="add_btn">新增</button></a>
+            <input type="text" class="search" id="search" value="">
+            <a href="#" onclick="search_btn()" id="search_a"><button class="search_btn">搜索</button></a>
+        </div>
+    </div>
+</body>
+<script>
+    var del_btn = () => {
+        alert('已删除！');
+    }
+
+    var search_btn = () => {
+        var search_content = document.getElementById('search').value;
+        var href = document.getElementById('search_a').href;
+        location.href = '/search?search_content=' + search_content;
+    }
+</script>
+
+</html>
